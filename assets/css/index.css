@@ -1,0 +1,44 @@
+.container {
+    color: #2e442d;
+    display: flex;
+    flex-direction: column;
+    margin: 60px 100px;
+    line-height: 80%;
+}
+
+.page-logo {
+    background-color:#1ce6f0 ;
+    line-height: normal;
+    font-size: 40px;
+    text-align: center;
+}
+
+.border-line {
+    border: 1px solid #17a9ff;
+}
+
+.post-button {
+    color: #2e442d;
+    background-color: #ffff00;
+    width: 100px;
+}
+
+.post-contents {
+    margin: 20px 0;
+    padding: 20px;
+}
+
+.post-button-wrapper {
+    text-align:center;
+    margin: 10px;
+}
+
+.update-button {
+    color: #2e442d;
+    background-color: #bcffbc;
+    border: 1px solid #17a9ff;
+}
+
+.update-button-wrapper {
+    text-align: right;
+}
