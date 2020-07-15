@@ -1,19 +1,21 @@
-const http = require('http');
-const fs = require('fs');
+/**
+ * /app.js
+ */ 
+// express モジュールのインスタンス作成
+const express = require('express');
+const app = express();
+// パス指定用モジュール
+const path = require('path');
 
-const server = http.createServer((req,res) => {
-	const url = "../" + (req.url.endsWith("/") ? req.url + "index.html" : req.url);
-	if (fs.existsSync(url)) {
-		fs.readFile(url, (err ,data) => {
-			if (!err) {
-				res.writeHead(200, {'Content-Type' : 'text/html; charset=utf-8' });
-				res.end(data);
-			}
-		});
-	}
+// 3000番ポートで待ちうける
+app.listen(3000, () => {
+  console.log('Running at Port 3000...');
 });
 
-const port = 8080;
-server.listen(port);
-console.log('Server listen on port ' + port);
+// 静的ファイルのルーティング
+app.use(express.static(path.join(__dirname, '../')));
 
+// その他のリクエストに対する404エラー
+app.use((req, res) => {
+  res.sendStatus(404);
+}); 
